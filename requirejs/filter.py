@@ -80,7 +80,7 @@ class RequireJSCompiler(FilterBase):
 
         Returns the rewritten content of the module and None if no define-call was found.
         """
-        text_content = text_type(original_content, settings.FILE_CHARSET)
+        text_content = text_type(original_content)
         define_call = define_replace_pattern.findall(text_content)
         if define_call:
             if not module.named:
