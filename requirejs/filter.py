@@ -39,7 +39,7 @@ class RequireJSCompiler(FilterBase):
 
     # noinspection PyMethodMayBeStatic
     def get_module_finder(self, main=None):
-        template_directories = settings.TEMPLATE_DIRS + get_app_template_dirs()
+        template_directories = settings.TEMPLATES[0]['DIRS'] + get_app_template_dirs()
         shim_dependencies = list(chain(*[s.get('deps', []) for s in CONFIG.get('shim', {}).values()]))
         main_dependency = [main] if main else []
         dependencies = shim_dependencies + main_dependency
