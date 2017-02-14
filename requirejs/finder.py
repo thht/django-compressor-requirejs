@@ -154,7 +154,7 @@ class ModuleFinder(object):
 
     @staticmethod
     def get_module_content(path):
-        with open(path, 'r') as f:
+        with open(path, 'r', encoding='utf8') as f:
             return f.read()
 
     @staticmethod
